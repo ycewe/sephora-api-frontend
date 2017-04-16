@@ -1,0 +1,35 @@
+{
+  "name": "sephora-api",
+  "version": "1.0.0",
+  "description": "frontend engineering test for sephora api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ycewe/sephora-api.git"
+  },
+  "author": "Eric Ewe (theericewe@live.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ycewe/sephora-api/issues"
+  },
+  "homepage": "https://github.com/ycewe/sephora-api#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "react": "^15.5.4"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "chai": "^3.5.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "gulp": "^3.9.1",
+    "mocha": "^3.2.0",
+    "webpack": "^2.4.1"
+  }
+}
