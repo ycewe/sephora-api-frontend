@@ -36,14 +36,14 @@ gulp.task('test', () => {
 
 // minimizing files and bundling
 gulp.task('css', () =>
-  gulp.src('./client/resources/style/**/*.scss')
+  gulp.src('./client/resources/**/*.scss')
     .pipe(
       sass({
-        includePaths: ['./client/resources/style'],
+        includePaths: ['./client/resources'],
         errLogToConsole: true,
       }))
     .pipe(csso())
-    .pipe(gulp.dest(`${rootDir}/resources/style/`)),
+    .pipe(gulp.dest(`${rootDir}/resources`)),
 );
 
 gulp.task('html', () =>
