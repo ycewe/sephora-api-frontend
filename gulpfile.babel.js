@@ -59,7 +59,7 @@ gulp.task('bundle', () =>
 
 // watch file changes
 gulp.task('watch', () => {
-  gulp.watch('./client/resources/style/**/*.scss', ['css']);
+  gulp.watch('./client/resources/**/*.scss', ['css']);
   gulp.watch('./client/*.html', ['html']);
   gulp.watch('./client/**/*.js', ['bundle']);
 });

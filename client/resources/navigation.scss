@@ -1,0 +1,70 @@
+#navigation-body {
+  margin: 20px;
+
+  .link {
+    text-decoration: none;
+    color: #000000;
+  }
+
+  .list-title {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 18px;
+    display: inline;
+  }
+
+  #makeup-dropdown {
+    display: none;
+  }
+
+  #makeup-dropdown-label {
+    margin-left: 20px;
+  }
+
+  #makeup-dropdown:checked ~ #makeup {
+    display: block;
+  }
+
+  #price-dropdown {
+    display: none;
+  }
+
+  #price-dropdown-label {
+    margin-left: 45px;
+  }
+
+  #price-dropdown:checked ~ #price {
+    display: block;
+  }
+
+  #list-border {
+    border: 2px solid black;
+  }
+
+  #makeup {
+    display: none;
+    list-style-type: none;
+    padding: 0;
+
+    .makeup-item {
+      font-size: 14px;
+      padding: 2px;
+    }
+
+    #makeup-face {
+      list-style-type: none;
+      padding-left: 20px;
+    }
+  }
+
+  #price {
+    display: none;
+    list-style-type: none;
+    padding: 0;
+
+    .price-item {
+      padding: 4px;
+      font-size: 14px;
+    }
+  }
+}
