@@ -1,5 +1,6 @@
 #navigation-body {
   margin: 20px;
+  width: 550px;
 
   .link {
     text-decoration: none;
@@ -13,6 +14,40 @@
     display: inline;
   }
 
+  #list-border {
+    border: 2px solid black;
+  }
+
+  /** makeup navigation css **/
+  #makeup {
+    display: none;
+    list-style-type: none;
+    padding: 0;
+
+    .makeup-item {
+      font-size: 14px;
+      padding: 2px;
+    }
+
+    #makeup-face {
+      list-style-type: none;
+      padding-left: 20px;
+    }
+  }
+
+  /** price navigation css **/
+  #price {
+    display: none;
+    list-style-type: none;
+    padding: 0;
+
+    .price-item {
+      padding: 4px;
+      font-size: 14px;
+    }
+  }
+
+  /** dropdown logic **/
   #makeup-dropdown {
     display: none;
   }
@@ -35,36 +70,5 @@
 
   #price-dropdown:checked ~ #price {
     display: block;
-  }
-
-  #list-border {
-    border: 2px solid black;
-  }
-
-  #makeup {
-    display: none;
-    list-style-type: none;
-    padding: 0;
-
-    .makeup-item {
-      font-size: 14px;
-      padding: 2px;
-    }
-
-    #makeup-face {
-      list-style-type: none;
-      padding-left: 20px;
-    }
-  }
-
-  #price {
-    display: none;
-    list-style-type: none;
-    padding: 0;
-
-    .price-item {
-      padding: 4px;
-      font-size: 14px;
-    }
   }
 }
