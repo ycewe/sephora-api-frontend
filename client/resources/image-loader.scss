@@ -1,0 +1,25 @@
+#image-loader-body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  #product {
+    width: 230px;
+    height: 230px;
+    font-size: 14px;
+    padding: 10px;
+
+    #product-name {
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    #product-category {
+
+    }
+
+    #product-price {
+      font-weight: 600;
+    }
+  }
+}
