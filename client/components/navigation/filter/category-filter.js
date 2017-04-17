@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import FilterConstants from '../constants/filterConstants';
+import CategoryConstants from '../../constants/categoryConstants';
 import FilterItem from './filter-item';
 
 class CategoryFilter extends React.Component {
@@ -40,9 +39,9 @@ class CategoryFilter extends React.Component {
       <div>
         <div className="list-title">Category</div>
         <ul id="category-filter">
-          <FilterItem filter="cat-tools" text={FilterConstants.tools} handleToggle={this.handleToggle} />
-          <FilterItem filter="cat-brushes" text={FilterConstants.brushes} handleToggle={this.handleToggle} />
-          <FilterItem filter="cat-markup" text={FilterConstants.markup} handleToggle={this.handleToggle} />
+          <FilterItem filter="cat-tools" text={CategoryConstants.tools} handleToggle={this.handleToggle} type="checkbox" />
+          <FilterItem filter="cat-brushes" text={CategoryConstants.brushes} handleToggle={this.handleToggle} type="checkbox" />
+          <FilterItem filter="cat-markup" text={CategoryConstants.markup} handleToggle={this.handleToggle} type="checkbox" />
         </ul>
       </div>
     );

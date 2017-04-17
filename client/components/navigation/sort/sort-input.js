@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SortConstants from '../constants/sortConstants';
+import SortConstants from '../../constants/sortConstants';
 
 class SortInput extends React.Component {
   constructor(props) {

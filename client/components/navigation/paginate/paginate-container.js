@@ -8,8 +8,8 @@ class PaginateContainer extends React.Component {
     super(props);
 
     this.state = {
-      offset: 1,
-      size: 25,
+      offset: '1',
+      size: '25',
     };
 
     this.handlePageSize = ::this.handlePageSize;
