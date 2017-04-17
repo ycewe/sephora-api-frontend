@@ -1,6 +1,6 @@
 #navigation-body {
   margin: 20px;
-  width: 550px;
+  min-width: 120px;
 
   .link {
     text-decoration: none;
@@ -20,7 +20,7 @@
 
   /** product navigation css **/
   #product-nav {
-    display: none;
+    //display: none;
     list-style-type: none;
     padding: 0;
 
@@ -32,7 +32,7 @@
 
   /** price filter css **/
   #price-filter {
-    display: none;
+  //  display: none;
     list-style-type: none;
     padding: 0;
 
