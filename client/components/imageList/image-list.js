@@ -1,10 +1,10 @@
 import React from 'react';
-import data from '../../database/data.json';
+import PropTypes from 'prop-types';
 
-const ImageLoader = () => (
+const ImageList = ({ images }) => (
   <div id="image-loader-body">
     {
-      data.data.map(product =>
+      images.map(product =>
         <div key={product.id} id="product">
           <img src="http://placehold.it/150x150" alt={product.attributes.name} />
           <div id="product-name">{product.attributes.name}</div>
@@ -16,4 +16,8 @@ const ImageLoader = () => (
   </div>
 );
 
-export default ImageLoader;
+ImageList.propTypes = {
+  images: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
+
+export default ImageList;
