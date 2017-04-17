@@ -19,6 +19,7 @@
   "homepage": "https://github.com/ycewe/sephora-api#readme",
   "dependencies": {
     "express": "^4.15.2",
+    "prop-types": "^15.5.8",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-router": "^4.1.1",
@@ -46,6 +47,7 @@
     "gulp-eslint": "^3.0.1",
     "gulp-mocha-co": "^0.4.1-co.3",
     "gulp-sass": "^3.1.0",
+    "json-loader": "^0.5.4",
     "mocha": "^3.2.0",
     "nodemon": "^1.11.0",
     "webpack": "^2.4.1",
