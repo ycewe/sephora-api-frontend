@@ -1,7 +1,7 @@
-const FilterConstants = {
+const CategoryConstants = {
   tools: 'tools',
   markup: 'markup',
   brushes: 'brushes',
 };
 
-export default FilterConstants;
+export default CategoryConstants;
