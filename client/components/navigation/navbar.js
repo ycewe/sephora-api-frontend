@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CategoryFilter from './category-filter';
 import PriceFilter from './price-filter';
-import Paginate from './paginate';
+import PaginateContainer from './paginate-container';
 import SortInput from './sort-input';
 
 class Navbar extends React.Component {
@@ -39,10 +39,12 @@ class Navbar extends React.Component {
   }
 
   // handler to determine the selected pagination
-  setPagination(pagination) {
+  setPagination(pageOffset, pageSize) {
+    const pagination = [pageOffset, pageSize];
     this.setState({
       paginate: pagination,
     });
+    this.props.setPaginations(pagination);
   }
 
   setSort(sort) {
@@ -55,7 +57,7 @@ class Navbar extends React.Component {
   render() {
     return (
       <div id="navigation-body">
-        <Paginate setFilter={this.setPagination} />
+        <PaginateContainer setPagination={this.setPagination} />
         <SortInput setSort={this.setSort} />
         <hr className="list-border" />
         <CategoryFilter setFilter={this.setCategoryFilter} />
@@ -69,6 +71,7 @@ class Navbar extends React.Component {
 Navbar.propTypes = {
   setFilters: PropTypes.func.isRequired,
   setSort: PropTypes.func.isRequired,
+  setPaginations: PropTypes.func.isRequired,
 };
 
 export default Navbar;

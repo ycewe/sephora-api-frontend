@@ -8,12 +8,13 @@ class App extends React.Component {
 
     this.state = {
       filters: [],
-      sort: [],
-      paginate: [],
+      sort: '',
+      paginations: [],
     };
 
     this.setFilters = ::this.setFilters;
     this.setSort = ::this.setSort;
+    this.setPaginations = ::this.setPaginations;
   }
 
   setFilters(filters) {
@@ -24,11 +25,23 @@ class App extends React.Component {
     this.setState({ sort });
   }
 
+  setPaginations(paginations) {
+    this.setState({ paginations });
+  }
+
   render() {
     return (
       <div id="app-body">
-        <Navbar setFilters={this.setFilters} setSort={this.setSort} />
-        <ImageListContainer filters={this.state.filters} sort={this.state.sort} />
+        <Navbar
+          setFilters={this.setFilters}
+          setSort={this.setSort}
+          setPaginations={this.setPaginations}
+        />
+        <ImageListContainer
+          filters={this.state.filters}
+          sort={this.state.sort}
+          paginations={this.state.paginations}
+        />
       </div>
     );
   }

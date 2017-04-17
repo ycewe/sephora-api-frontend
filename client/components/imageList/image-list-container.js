@@ -26,6 +26,14 @@ class ImageListContainer extends React.Component {
     return '';
   }
 
+  static getPaginateUrl(paginations) {
+    if (paginations) {
+      return `page[number]=${paginations[0]}&page[size]=${paginations[1]}&`;
+    }
+
+    return '';
+  }
+
   constructor(props) {
     super(props);
 
@@ -42,8 +50,9 @@ class ImageListContainer extends React.Component {
   componentWillReceiveProps(nextProps) {
     const filterUrl = ImageListContainer.getFilterUrl(nextProps.filters);
     const sortUrl = ImageListContainer.getSortUrl(nextProps.sort);
+    const paginateUrl = ImageListContainer.getPaginateUrl(nextProps.paginations);
 
-    this.fetchData(`https://sephora-api-frontend-test.herokuapp.com/products?${filterUrl}${sortUrl}`);
+    this.fetchData(`https://sephora-api-frontend-test.herokuapp.com/products?${filterUrl}${sortUrl}${paginateUrl}`);
   }
 
   /**
@@ -71,6 +80,7 @@ class ImageListContainer extends React.Component {
 ImageListContainer.propTypes = {
   filters: PropTypes.arrayOf(PropTypes.string).isRequired,
   sort: PropTypes.string.isRequired,
+  paginations: PropTypes.arrayOf(PropTypes.number).isRequired,
 };
 
 export default ImageListContainer;
