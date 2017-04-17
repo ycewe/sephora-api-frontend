@@ -3,7 +3,7 @@ import FilterItem from './filter-item';
 
 const CategoryFilter = () => (
   <div>
-    <div className="list-title">Products</div>
+    <div className="list-title">Category</div>
     <ul id="category-filter">
       <FilterItem filter="cat-tools" text="Tools" />
       <FilterItem filter="cat-brushes" text="Brushes" />

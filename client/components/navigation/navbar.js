@@ -1,6 +1,7 @@
 import React from 'react';
 import CategoryFilter from './category-filter';
 import PriceFilter from './price-filter';
+import Paginate from './paginate';
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -10,8 +11,10 @@ class Navbar extends React.Component {
   render() {
     return (
       <div id="navigation-body">
+        <Paginate />
+        <hr className="list-border" />
         <CategoryFilter />
-        <hr id="list-border" />
+        <hr className="list-border" />
         <PriceFilter />
       </div>
     );
