@@ -1,20 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CategoryFilter from './category-filter';
-import PriceFilter from './price-filter';
-import PaginateContainer from './paginate-container';
-import SortInput from './sort-input';
+import CategoryFilter from './filter/category-filter';
+import PriceFilter from './filter/price-filter';
+import PaginateContainer from './paginate/paginate-container';
+import SortInput from './sort/sort-input';
 
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      categoryFilter: [],
-      priceFilter: [],
-      pagination: [],
-      sort: '',
-    };
 
     // bind functions
     this.setCategoryFilter = ::this.setCategoryFilter;
@@ -25,32 +18,21 @@ class Navbar extends React.Component {
 
   // handler to determine the filter selected for categories
   setCategoryFilter(categories) {
-    this.setState({
-      categoryFilter: categories,
-    });
-    this.props.setFilters(categories);
+    this.props.setCategoryFilters(categories);
   }
 
   // handler to determine the filter selected for prices
-  setPriceFilter(range) {
-    this.setState({
-      priceFilter: range,
-    });
+  setPriceFilter(price) {
+    this.props.setPriceFilters(price);
   }
 
   // handler to determine the selected pagination
   setPagination(pageOffset, pageSize) {
     const pagination = [pageOffset, pageSize];
-    this.setState({
-      paginate: pagination,
-    });
     this.props.setPaginations(pagination);
   }
 
   setSort(sort) {
-    this.setState({
-      sort,
-    });
     this.props.setSort(sort);
   }
 
@@ -69,7 +51,8 @@ class Navbar extends React.Component {
 }
 
 Navbar.propTypes = {
-  setFilters: PropTypes.func.isRequired,
+  setCategoryFilters: PropTypes.func.isRequired,
+  setPriceFilters: PropTypes.func.isRequired,
   setSort: PropTypes.func.isRequired,
   setPaginations: PropTypes.func.isRequired,
 };

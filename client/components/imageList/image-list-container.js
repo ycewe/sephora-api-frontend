@@ -5,13 +5,21 @@ import ImageList from './image-list';
 import SortConstants from '../constants/sortConstants';
 
 class ImageListContainer extends React.Component {
-  static getFilterUrl(filters) {
+  static getCategoryFilterUrl(filters) {
     if (filters.length === 1) {
       // filter where category is equal to filter
       return `filter[category_eq]=${filters[0]}&`;
     } else if (filters.length > 1) {
       // filter where category is either filters
       return `filter[category_in]=${filters.toString()}&`;
+    }
+
+    return '';
+  }
+
+  static getPriceFilterUrl(filters) {
+    if (filters) {
+      return `filter[price_lt]=${filters * 100}&`;
     }
 
     return '';
@@ -27,7 +35,7 @@ class ImageListContainer extends React.Component {
   }
 
   static getPaginateUrl(paginations) {
-    if (paginations) {
+    if (paginations[0] && paginations[1]) {
       return `page[number]=${paginations[0]}&page[size]=${paginations[1]}&`;
     }
 
@@ -48,7 +56,9 @@ class ImageListContainer extends React.Component {
 
 
   componentWillReceiveProps(nextProps) {
-    const filterUrl = ImageListContainer.getFilterUrl(nextProps.filters);
+    const filterUrl = (nextProps.priceFilters === '0') ?
+      ImageListContainer.getCategoryFilterUrl(nextProps.categoryFilters) :
+      ImageListContainer.getPriceFilterUrl(nextProps.priceFilters);
     const sortUrl = ImageListContainer.getSortUrl(nextProps.sort);
     const paginateUrl = ImageListContainer.getPaginateUrl(nextProps.paginations);
 
@@ -78,9 +88,10 @@ class ImageListContainer extends React.Component {
 }
 
 ImageListContainer.propTypes = {
-  filters: PropTypes.arrayOf(PropTypes.string).isRequired,
+  categoryFilters: PropTypes.arrayOf(PropTypes.string).isRequired,
+  priceFilters: PropTypes.string.isRequired,
   sort: PropTypes.string.isRequired,
-  paginations: PropTypes.arrayOf(PropTypes.number).isRequired,
+  paginations: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default ImageListContainer;

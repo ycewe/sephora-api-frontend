@@ -7,18 +7,30 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      filters: [],
+      categoryFilters: [],
+      priceFilters: '0',
       sort: '',
       paginations: [],
     };
 
-    this.setFilters = ::this.setFilters;
+    this.setCategoryFilters = ::this.setCategoryFilters;
+    this.setPriceFilters = ::this.setPriceFilters;
     this.setSort = ::this.setSort;
     this.setPaginations = ::this.setPaginations;
   }
 
-  setFilters(filters) {
-    this.setState({ filters });
+  setCategoryFilters(categoryFilters) {
+    this.setState({
+      categoryFilters,
+      priceFilters: 0,
+    });
+  }
+
+  setPriceFilters(priceFilters) {
+    this.setState({
+      priceFilters,
+      categoryFilters: [],
+    });
   }
 
   setSort(sort) {
@@ -33,12 +45,14 @@ class App extends React.Component {
     return (
       <div id="app-body">
         <Navbar
-          setFilters={this.setFilters}
+          setCategoryFilters={this.setCategoryFilters}
+          setPriceFilters={this.setPriceFilters}
           setSort={this.setSort}
           setPaginations={this.setPaginations}
         />
         <ImageListContainer
-          filters={this.state.filters}
+          categoryFilters={this.state.categoryFilters}
+          priceFilters={this.state.priceFilters}
           sort={this.state.sort}
           paginations={this.state.paginations}
         />
