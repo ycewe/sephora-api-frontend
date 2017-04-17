@@ -1,6 +1,6 @@
 #navigation-body {
   margin: 20px;
-  min-width: 120px;
+  max-width: 120px;
 
   .link {
     text-decoration: none;
@@ -14,25 +14,13 @@
     display: inline;
   }
 
-  #list-border {
+  .list-border {
     border: 2px solid black;
   }
 
-  /** product navigation css **/
-  #product-nav {
+  /** filter css **/
+  #category-filter, #price-filter {
     //display: none;
-    list-style-type: none;
-    padding: 0;
-
-    .product-category {
-      font-size: 14px;
-      padding: 2px;
-    }
-  }
-
-  /** price filter css **/
-  #price-filter {
-  //  display: none;
     list-style-type: none;
     padding: 0;
 
@@ -40,6 +28,11 @@
       padding: 4px;
       font-size: 14px;
     }
+  }
+
+  /** paginate css **/
+  #paginate {
+    font-size: 14px;
   }
 
   /** dropdown logic **/
