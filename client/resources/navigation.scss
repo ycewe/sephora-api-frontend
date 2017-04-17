@@ -18,30 +18,25 @@
     border: 2px solid black;
   }
 
-  /** makeup navigation css **/
-  #makeup {
+  /** product navigation css **/
+  #product-nav {
     display: none;
     list-style-type: none;
     padding: 0;
 
-    .makeup-item {
+    .product-category {
       font-size: 14px;
       padding: 2px;
     }
-
-    #makeup-face {
-      list-style-type: none;
-      padding-left: 20px;
-    }
   }
 
-  /** price navigation css **/
-  #price {
+  /** price filter css **/
+  #price-filter {
     display: none;
     list-style-type: none;
     padding: 0;
 
-    .price-item {
+    .filter-item {
       padding: 4px;
       font-size: 14px;
     }
