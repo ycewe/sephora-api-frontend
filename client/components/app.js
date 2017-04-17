@@ -13,17 +13,22 @@ class App extends React.Component {
     };
 
     this.setFilters = ::this.setFilters;
+    this.setSort = ::this.setSort;
   }
 
   setFilters(filters) {
     this.setState({ filters });
   }
 
+  setSort(sort) {
+    this.setState({ sort });
+  }
+
   render() {
     return (
       <div id="app-body">
-        <Navbar setFilters={this.setFilters} />
-        <ImageListContainer filters={this.state.filters} />
+        <Navbar setFilters={this.setFilters} setSort={this.setSort} />
+        <ImageListContainer filters={this.state.filters} sort={this.state.sort} />
       </div>
     );
   }
