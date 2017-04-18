@@ -22,7 +22,7 @@ class App extends React.Component {
   setCategoryFilters(categoryFilters) {
     this.setState({
       categoryFilters,
-      priceFilters: 0,
+      priceFilters: '0',
     });
   }
 
