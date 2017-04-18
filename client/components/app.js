@@ -1,5 +1,5 @@
 import React from 'react';
-import ContentContainer from './ContentContainer/content-container';
+import ContentContainer from './contentContainer/content-container';
 import Navbar from './navigation/navbar';
 
 class App extends React.Component {
