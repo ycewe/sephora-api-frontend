@@ -1,6 +1,7 @@
 import React from 'react';
 import ImageListContainer from './imageList/image-list-container';
 import Navbar from './navigation/navbar';
+import PaginateContainer from './paginate/paginate-container';
 
 class App extends React.Component {
   constructor(props) {
@@ -37,25 +38,29 @@ class App extends React.Component {
     this.setState({ sort });
   }
 
-  setPaginations(paginations) {
+  // handler to determine the selected pagination
+  setPaginations(pageOffset, pageSize) {
+    const paginations = [pageOffset, pageSize];
     this.setState({ paginations });
   }
 
   render() {
     return (
       <div id="app-body">
-        <Navbar
-          setCategoryFilters={this.setCategoryFilters}
-          setPriceFilters={this.setPriceFilters}
-          setSort={this.setSort}
-          setPaginations={this.setPaginations}
-        />
-        <ImageListContainer
-          categoryFilters={this.state.categoryFilters}
-          priceFilters={this.state.priceFilters}
-          sort={this.state.sort}
-          paginations={this.state.paginations}
-        />
+        <PaginateContainer setPaginations={this.setPaginations} />
+        <div id="body-content-container">
+          <Navbar
+            setCategoryFilters={this.setCategoryFilters}
+            setPriceFilters={this.setPriceFilters}
+            setSort={this.setSort}
+          />
+          <ImageListContainer
+            categoryFilters={this.state.categoryFilters}
+            priceFilters={this.state.priceFilters}
+            sort={this.state.sort}
+            paginations={this.state.paginations}
+          />
+        </div>
       </div>
     );
   }

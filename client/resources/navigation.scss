@@ -29,34 +29,4 @@
       font-size: 14px;
     }
   }
-
-  /** paginate css **/
-  #paginate {
-    font-size: 14px;
-  }
-
-  /** dropdown logic **/
-  #makeup-dropdown {
-    display: none;
-  }
-
-  #makeup-dropdown-label {
-    margin-left: 20px;
-  }
-
-  #makeup-dropdown:checked ~ #makeup {
-    display: block;
-  }
-
-  #price-dropdown {
-    display: none;
-  }
-
-  #price-dropdown-label {
-    margin-left: 45px;
-  }
-
-  #price-dropdown:checked ~ #price {
-    display: block;
-  }
 }

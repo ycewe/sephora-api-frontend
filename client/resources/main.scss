@@ -3,11 +3,8 @@
 #root {
   font-family: 'Open Sans', sans-serif;
 
-  #app-body {
-    display: flex;
-    margin: 20px;
-
-    @import 'navigation';
-    @import 'image-loader';
-  }
+  @import 'body';
+  @import 'navigation';
+  @import 'image-loader';
+  @import 'paginate';
 }

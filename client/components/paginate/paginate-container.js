@@ -18,12 +18,12 @@ class PaginateContainer extends React.Component {
 
   handlePageSize(e) {
     this.setState({ size: e.target.value });
-    this.props.setPagination(this.state.offset, e.target.value);
+    this.props.setPaginations(this.state.offset, e.target.value);
   }
 
   handlePageOffset(e) {
     this.setState({ offset: e.target.value });
-    this.props.setPagination(e.target.value, this.state.size);
+    this.props.setPaginations(e.target.value, this.state.size);
   }
 
   render() {
@@ -38,7 +38,7 @@ class PaginateContainer extends React.Component {
 }
 
 PaginateContainer.propTypes = {
-  setPagination: PropTypes.func.isRequired,
+  setPaginations: PropTypes.func.isRequired,
 };
 
 export default PaginateContainer;
