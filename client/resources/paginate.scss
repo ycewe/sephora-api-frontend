@@ -2,4 +2,8 @@
 #paginate {
   font-size: 14px;
   display: flex;
+
+  #pag-offset, #pag-size {
+    width: 40px;
+  }
 }

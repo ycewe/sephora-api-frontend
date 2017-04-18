@@ -19,6 +19,7 @@
   "homepage": "https://github.com/ycewe/sephora-api#readme",
   "dependencies": {
     "express": "^4.15.2",
+    "lodash": "^4.17.4",
     "node-fetch": "^1.6.3",
     "prop-types": "^15.5.8",
     "react": "^15.5.4",

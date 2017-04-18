@@ -47,6 +47,7 @@ class ImageListContainer extends React.Component {
 
     this.state = {
       images: [],
+      links: [],
     };
   }
 
@@ -70,14 +71,14 @@ class ImageListContainer extends React.Component {
     * @param url - route to data
     */
   fetchData(url) {
-    console.log(url);
     fetch(url)
       .then(res => res.json())
-      .then(json =>
+      .then((json) => {
         this.setState({
           images: json.data,
-        }),
-      );
+        });
+        this.props.setPageRange(json.links);
+      });
   }
 
   render() {
@@ -92,6 +93,7 @@ ImageListContainer.propTypes = {
   priceFilters: PropTypes.string.isRequired,
   sort: PropTypes.string.isRequired,
   paginations: PropTypes.arrayOf(PropTypes.string).isRequired,
+  setPageRange: PropTypes.func.isRequired,
 };
 
 export default ImageListContainer;

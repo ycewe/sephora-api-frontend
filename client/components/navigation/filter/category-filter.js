@@ -15,7 +15,7 @@ class CategoryFilter extends React.Component {
   }
 
   handleToggle(e) {
-    let categories = this.state.filters;
+    let categories = this.state.filters.slice();
 
     // if checkbox is checked, add filter to array
     if (e.target.checked) {

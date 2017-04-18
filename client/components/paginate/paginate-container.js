@@ -29,9 +29,8 @@ class PaginateContainer extends React.Component {
   render() {
     return (
       <div id="paginate">
-        <div className="list-title">Paginate</div>
-        <PaginateSize inputType="pag-size" text="Number of Products" handlePageSize={this.handlePageSize} />
-        <PaginateOffset inputType="pag-page" handlePageOffset={this.handlePageOffset} />
+        <PaginateOffset handlePageOffset={this.handlePageOffset} />
+        <PaginateSize text="Products Per Page" handlePageSize={this.handlePageSize} />
       </div>
     );
   }

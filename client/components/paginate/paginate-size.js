@@ -1,15 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const PaginateSize = ({ inputType, text, handlePageSize }) => (
+const PaginateSize = ({ text, handlePageSize }) => (
   <div className="paginate">
-    <input type="number" min="1" id={inputType} onChange={handlePageSize} />
-    <label htmlFor={inputType}>{text}</label>
+    <label htmlFor="pag-size">{text}</label>
+    <input type="number" min="1" id="pag-size" onChange={handlePageSize} />
   </div>
 );
 
 PaginateSize.propTypes = {
-  inputType: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   handlePageSize: PropTypes.func.isRequired,
 };
