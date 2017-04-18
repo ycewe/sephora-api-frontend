@@ -3,8 +3,13 @@
 #root {
   font-family: 'Open Sans', sans-serif;
 
-  @import 'body';
-  @import 'navigation';
-  @import 'image-loader';
-  @import 'paginate';
+  #app-body {
+    display: flex;
+    margin: 20px;
+
+    @import 'content-container';
+    @import 'navigation';
+    @import 'image-loader';
+    @import 'paginate';
+  }
 }
