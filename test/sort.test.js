@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+
 import React from 'react';
 import { mount } from 'enzyme';
 import sinon from 'sinon';
@@ -10,6 +12,9 @@ test('returns correct category filter', () => {
     <Sort
       setSort={setSortStub}
     />);
-  wrapper.find('select').simulate('change', { target: { value: 'price' }});
-  expect(wrapper.state('sort')).toEqual('price')
+
+  wrapper.find('select')
+    .simulate('change', { target: { value: 'price' } });
+
+  expect(wrapper.state('sort')).toEqual('price');
 });
