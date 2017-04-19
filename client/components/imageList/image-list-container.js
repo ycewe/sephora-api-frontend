@@ -77,7 +77,7 @@ class ImageListContainer extends React.Component {
 
   /**
     * fetch data via API
-    * @param url - route to data
+    * @param string - url
     */
   fetchData(url) {
     fetch(url)

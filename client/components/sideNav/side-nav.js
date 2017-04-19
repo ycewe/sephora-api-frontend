@@ -12,7 +12,6 @@ class Navbar extends React.Component {
       isFilter: true, // default filter selection
     };
 
-    // bind functions
     this.setCategoryFilter = ::this.setCategoryFilter;
     this.setPriceFilter = ::this.setPriceFilter;
     this.setSort = ::this.setSort;

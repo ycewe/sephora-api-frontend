@@ -2,6 +2,10 @@ import React from 'react';
 import ContentContainer from './contentContainer/content-container';
 import Navbar from './sideNav/side-nav';
 
+/**
+  * Main component that renders the application.
+  * Mediator for data and input.
+  */
 class App extends React.Component {
   constructor(props) {
     super(props);

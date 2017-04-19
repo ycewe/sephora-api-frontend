@@ -23,12 +23,14 @@ class ContentBody extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    // reset current page number if filter is changed to avoid empty data
     if (!_.isEqual(this.props.categoryFilters, nextProps.categoryFilters) ||
       !_.isEqual(this.props.priceFilters, nextProps.priceFilters)) {
       this.setPaginations(PageConstants.defaultPage, this.state.paginations[1]);
     }
   }
 
+  // update only when there is a change
   shouldComponentUpdate(nextProps, nextState) {
     if (_.isEqual(this.props, nextProps) && _.isEqual(this.state, nextState)) {
       return false;
@@ -39,8 +41,8 @@ class ContentBody extends React.Component {
 
   /**
     * Handler to determine the selected pagination
-    * @param  pageOffset - current page
-    *         pageSize - current display size
+    * @param  string - pageOffset
+    *         string - pageSize
     */
   setPaginations(pageOffset, pageSize) {
     const paginations = [pageOffset, pageSize];
@@ -50,7 +52,7 @@ class ContentBody extends React.Component {
   /**
     * Retrieves page links information from data
     * and pass to paginate component
-    * @param  pageLinks - links to prev/next/last/start pages
+    * @param  array - pageLinks
     */
   setPageRange(pageLinks) {
     this.setState({ pageLinks });
