@@ -80,7 +80,6 @@ class ImageListContainer extends React.Component {
     * @param url - route to data
     */
   fetchData(url) {
-    console.log(url);
     fetch(url)
       .then(res => res.json())
       .then((json) => {
