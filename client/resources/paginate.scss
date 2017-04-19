@@ -7,12 +7,34 @@
   padding: 10px;
 
   #paginate-btn-group {
-    width: 220px;
+    width: 230px;
     display: flex;
     justify-content: space-around;
+
+    .offset-page-btn {
+      background: none;
+      border: 1px solid black;
+    }
+
+    .offset-page-disable {
+      background: none;
+      border: none;
+    }
+
+    .offset-page-btn:hover {
+      color: white;
+      background: black;
+      cursor: pointer;
+    }
+
+    #current-page-indicator {
+      font-weight: 800;
+      font-size: 20px;
+    }
   }
 
-  #pag-offset, #pag-size {
-    width: 40px;
+  #page-size-input {
+    width: 55px;
+    margin-left: 10px;
   }
 }

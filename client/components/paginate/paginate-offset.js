@@ -36,35 +36,39 @@ class PaginateOffset extends React.Component {
       (<button
         value={PaginateOffset.getPageOffset(this.props.pageRange.first)}
         onClick={this.props.handlePageOffset}
+        className="offset-page-btn"
       >First</button>) :
-      <button disabled>First</button>;
+      <button className="offset-page-disable" disabled>First</button>;
 
     const last = (this.props.pageRange.last) ?
       (<button
         value={PaginateOffset.getPageOffset(this.props.pageRange.last)}
         onClick={this.props.handlePageOffset}
+        className="offset-page-btn"
       >Last</button>) :
-      <button disabled>Last</button>;
+      <button className="offset-page-disable" disabled>Last</button>;
 
     const next = (this.props.pageRange.next) ?
       (<button
         value={PaginateOffset.getPageOffset(this.props.pageRange.next)}
         onClick={this.props.handlePageOffset}
+        className="offset-page-btn"
       >Next</button>) :
-      <button disabled>Next</button>;
+      <button className="offset-page-disable" disabled>Next</button>;
 
     const prev = (this.props.pageRange.prev) ?
       (<button
         value={PaginateOffset.getPageOffset(this.props.pageRange.prev)}
         onClick={this.props.handlePageOffset}
+        className="offset-page-btn"
       >Prev</button>) :
-      <button disabled>Prev</button>;
+      <button className="offset-page-disable" disabled>Prev</button>;
 
     return (
       <div id="paginate-btn-group">
         {first}
         {prev}
-        {this.state.currentPage}
+        <span id="current-page-indicator">{this.state.currentPage}</span>
         {next}
         {last}
       </div>

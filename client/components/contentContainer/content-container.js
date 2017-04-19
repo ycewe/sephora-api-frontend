@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import _ from 'lodash';
 import ImageListContainer from '../imageList/image-list-container';
 import PaginateContainer from '../paginate/paginate-container';
+import PageConstants from '../constants/pageConstants';
 
 class ContentBody extends React.Component {
   constructor(props) {
@@ -15,6 +16,13 @@ class ContentBody extends React.Component {
 
     this.setPaginations = ::this.setPaginations;
     this.setPageRange = ::this.setPageRange;
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (!_.isEqual(this.props.categoryFilters, nextProps.categoryFilters) ||
+      !_.isEqual(this.props.priceFilters, nextProps.priceFilters)) {
+      this.setPaginations(PageConstants.defaultPage, this.state.paginations[1]);
+    }
   }
 
   shouldComponentUpdate(nextProps, nextState) {
