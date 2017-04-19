@@ -1,6 +1,6 @@
 import React from 'react';
 import ContentContainer from './contentContainer/content-container';
-import Navbar from './sideNav/navbar';
+import Navbar from './sideNav/side-nav';
 
 class App extends React.Component {
   constructor(props) {

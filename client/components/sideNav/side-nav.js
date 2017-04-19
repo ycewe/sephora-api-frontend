@@ -8,10 +8,15 @@ class Navbar extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      isFilter: true, // default filter selection
+    };
+
     // bind functions
     this.setCategoryFilter = ::this.setCategoryFilter;
     this.setPriceFilter = ::this.setPriceFilter;
     this.setSort = ::this.setSort;
+    this.handleFilterSelect = ::this.handleFilterSelect;
   }
 
   // handler to determine the filter selected for categories
@@ -29,12 +34,26 @@ class Navbar extends React.Component {
     this.props.setSort(sort);
   }
 
+  handleFilterSelect() {
+    this.setState({
+      isFilter: !this.state.isFilter, // toggle filters
+    });
+  }
+
   render() {
     return (
       <div id="navigation-body">
         <SortInput setSort={this.setSort} />
-        <CategoryFilter setFilter={this.setCategoryFilter} />
-        <PriceFilter setFilter={this.setPriceFilter} />
+        <CategoryFilter
+          isDisplayed={this.state.isFilter}
+          setFilter={this.setCategoryFilter}
+          handleFilterSelect={this.handleFilterSelect}
+        />
+        <PriceFilter
+          isDisplayed={!this.state.isFilter}
+          setFilter={this.setPriceFilter}
+          handleFilterSelect={this.handleFilterSelect}
+        />
       </div>
     );
   }

@@ -9,6 +9,7 @@ import fetch from 'node-fetch';
 import ImageList from './image-list';
 import SortConstants from '../constants/sortConstants';
 import PriceConstants from '../constants/priceConstants';
+import UrlConstants from '../constants/urlConstants';
 
 /**
   * Wrapper to make HTTP calls to fetch data
@@ -17,10 +18,10 @@ class ImageListContainer extends React.Component {
   static getCategoryFilterUrl(filters) {
     if (filters.length === 1) {
       // filter where category is equal to filter
-      return `filter[category_eq]=${filters[0]}&`;
+      return `${UrlConstants.category_equal}${filters[0]}&`;
     } else if (filters.length > 1) {
       // filter where category is either filters
-      return `filter[category_in]=${filters.toString()}&`;
+      return `${UrlConstants.category_either}${filters.toString()}&`;
     }
 
     return '';
@@ -28,7 +29,7 @@ class ImageListContainer extends React.Component {
 
   static getPriceFilterUrl(filters) {
     if (filters) {
-      return `filter[price_lt]=${filters * PriceConstants.divisor}&`;
+      return `${UrlConstants.price_less_than}${filters * PriceConstants.divisor}&`;
     }
 
     return '';
@@ -37,7 +38,7 @@ class ImageListContainer extends React.Component {
   static getSortUrl(sort) {
     if (sort && sort !== SortConstants.none) {
       // determine how data is sorted
-      return `sort=${sort}&`;
+      return `${UrlConstants.sort}${sort}&`;
     }
 
     return '';
@@ -45,7 +46,7 @@ class ImageListContainer extends React.Component {
 
   static getPaginateUrl(paginations) {
     if (paginations[0] && paginations[1]) {
-      return `page[number]=${paginations[0]}&page[size]=${paginations[1]}&`;
+      return `${UrlConstants.page_number}${paginations[0]}${UrlConstants.page_size}${paginations[1]}&`;
     }
 
     return '';
@@ -61,7 +62,7 @@ class ImageListContainer extends React.Component {
   }
 
   componentDidMount() {
-    this.fetchData('https://sephora-api-frontend-test.herokuapp.com/products');
+    this.fetchData(UrlConstants.main);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -71,7 +72,7 @@ class ImageListContainer extends React.Component {
     const sortUrl = ImageListContainer.getSortUrl(nextProps.sort);
     const paginateUrl = ImageListContainer.getPaginateUrl(nextProps.paginations);
 
-    this.fetchData(`https://sephora-api-frontend-test.herokuapp.com/products?${filterUrl}${sortUrl}${paginateUrl}`);
+    this.fetchData(`${UrlConstants.main}?${filterUrl}${sortUrl}${paginateUrl}`);
   }
 
   /**
@@ -79,6 +80,7 @@ class ImageListContainer extends React.Component {
     * @param url - route to data
     */
   fetchData(url) {
+    console.log(url);
     fetch(url)
       .then(res => res.json())
       .then((json) => {

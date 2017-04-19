@@ -15,6 +15,7 @@ class CategoryFilter extends React.Component {
     };
 
     this.handleToggle = ::this.handleToggle;
+    this.handleSelect = ::this.handleSelect;
   }
 
   handleToggle(e) {
@@ -37,22 +38,36 @@ class CategoryFilter extends React.Component {
     this.props.setFilter(categories);
   }
 
+  handleSelect() {
+    this.setState({
+      filters: [],
+    });
+    this.props.handleFilterSelect();
+  }
+
   render() {
     return (
-      <div>
-        <div className="list-title">Category</div>
-        <ul id="category-filter">
-          <FilterItem filter="cat-tools" text={CategoryConstants.tools} handleToggle={this.handleToggle} type="checkbox" />
-          <FilterItem filter="cat-brushes" text={CategoryConstants.brushes} handleToggle={this.handleToggle} type="checkbox" />
-          <FilterItem filter="cat-markup" text={CategoryConstants.markup} handleToggle={this.handleToggle} type="checkbox" />
-        </ul>
+      <div id="category-filter-container">
+        <input type="radio" name="filter" id="cat-filter" onChange={this.handleSelect} checked={this.props.isDisplayed} />
+        <label htmlFor="cat-filter" className="list-title">Category</label>
+        {
+          (this.props.isDisplayed) ?
+            <ul id="category-filter">
+              <FilterItem filter="cat-tools" text={CategoryConstants.tools} handleToggle={this.handleToggle} type="checkbox" />
+              <FilterItem filter="cat-brushes" text={CategoryConstants.brushes} handleToggle={this.handleToggle} type="checkbox" />
+              <FilterItem filter="cat-markup" text={CategoryConstants.markup} handleToggle={this.handleToggle} type="checkbox" />
+            </ul> :
+            <div />
+        }
       </div>
     );
   }
 }
 
 CategoryFilter.propTypes = {
+  isDisplayed: PropTypes.bool.isRequired,
   setFilter: PropTypes.func.isRequired,
+  handleFilterSelect: PropTypes.func.isRequired,
 };
 
 export default CategoryFilter;
