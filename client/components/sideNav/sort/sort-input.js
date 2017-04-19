@@ -19,7 +19,7 @@ class SortInput extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id="sort-input">
         <div className="list-title">Sort</div>
         <select onChange={this.handleSelect}>
           <SortOption value={SortConstants.none} text="None" />

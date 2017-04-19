@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const FilterItem = ({ filter, text, handleToggle, type }) => (
   <li className="filter-item">
     <input type={type} name={type} id={filter} value={text} onChange={handleToggle} />
-    <label htmlFor={filter}>{text}</label>
+    <label htmlFor={filter} className="filter-item">{text}</label>
   </li>
 );
 

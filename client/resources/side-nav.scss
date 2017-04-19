@@ -21,13 +21,17 @@
 
   /** filter css **/
   #category-filter, #price-filter {
-    //display: none;
     list-style-type: none;
     padding: 0;
 
     .filter-item {
       padding: 4px;
       font-size: 14px;
+      text-transform: capitalize;
     }
+  }
+
+  #sort-input {
+    padding: 40px 0;
   }
 }

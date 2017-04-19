@@ -33,9 +33,7 @@ class Navbar extends React.Component {
     return (
       <div id="navigation-body">
         <SortInput setSort={this.setSort} />
-        <hr className="list-border" />
         <CategoryFilter setFilter={this.setCategoryFilter} />
-        <hr className="list-border" />
         <PriceFilter setFilter={this.setPriceFilter} />
       </div>
     );
