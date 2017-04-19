@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import FilterItem from './filter-item';
 import PriceConstants from '../../constants/priceConstants';
 
+/**
+  * Handles filtering of prices
+  */
 class PriceFilter extends React.Component {
   constructor(props) {
     super(props);
@@ -15,7 +18,6 @@ class PriceFilter extends React.Component {
   }
 
   handleToggle(e) {
-    console.log(e.target);
     this.props.setFilter(e.target.value);
   }
 
@@ -24,12 +26,12 @@ class PriceFilter extends React.Component {
       <div>
         <div className="list-title">Price</div>
         <ul id="price-filter">
-          <FilterItem filter="under-25" text={`${PriceConstants.under25 / 100}`} handleToggle={this.handleToggle} type="radio" />
-          <FilterItem filter="under-50" text={`${PriceConstants.under50 / 100}`} handleToggle={this.handleToggle} type="radio" />
-          <FilterItem filter="under-100" text={`${PriceConstants.under100 / 100}`} handleToggle={this.handleToggle} type="radio" />
-          <FilterItem filter="under-150" text={`${PriceConstants.under150 / 100}`} handleToggle={this.handleToggle} type="radio" />
-          <FilterItem filter="under-300" text={`${PriceConstants.under300 / 100}`} handleToggle={this.handleToggle} type="radio" />
-          <FilterItem filter="under-1000" text={`${PriceConstants.under1000 / 100}`} handleToggle={this.handleToggle} type="radio" />
+          <FilterItem filter="option1" text={`${PriceConstants.under15 / PriceConstants.divisor}`} handleToggle={this.handleToggle} type="radio" />
+          <FilterItem filter="option2" text={`${PriceConstants.under30 / PriceConstants.divisor}`} handleToggle={this.handleToggle} type="radio" />
+          <FilterItem filter="option3" text={`${PriceConstants.under50 / PriceConstants.divisor}`} handleToggle={this.handleToggle} type="radio" />
+          <FilterItem filter="option4" text={`${PriceConstants.under100 / PriceConstants.divisor}`} handleToggle={this.handleToggle} type="radio" />
+          <FilterItem filter="option5" text={`${PriceConstants.under250 / PriceConstants.divisor}`} handleToggle={this.handleToggle} type="radio" />
+          <FilterItem filter="option6" text={`${PriceConstants.under1000 / PriceConstants.divisor}`} handleToggle={this.handleToggle} type="radio" />
         </ul>
       </div>
     );

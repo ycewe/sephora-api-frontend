@@ -27,8 +27,8 @@ class App extends React.Component {
 
   setPriceFilters(priceFilters) {
     this.setState({
-      priceFilters,
       categoryFilters: [],
+      priceFilters,
     });
   }
 

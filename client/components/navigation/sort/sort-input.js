@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import SortConstants from '../../constants/sortConstants';
 import SortOption from './sort-option';
 
+/**
+  * Handles sort selection
+  */
 class SortInput extends React.Component {
   constructor(props) {
     super(props);

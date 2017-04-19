@@ -4,6 +4,9 @@ import PaginateOffset from './paginate-offset';
 import PaginateSize from './paginate-size';
 import PageConstants from '../constants/pageConstants';
 
+/**
+  * Hosts both pagination components (display size and page number)
+  */
 class PaginateContainer extends React.Component {
   constructor(props) {
     super(props);

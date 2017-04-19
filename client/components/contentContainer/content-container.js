@@ -5,6 +5,10 @@ import ImageListContainer from '../imageList/image-list-container';
 import PaginateContainer from '../paginate/paginate-container';
 import PageConstants from '../constants/pageConstants';
 
+/**
+  * Hosts the image-list component and paginate component
+  * Handles display and rendering
+  */
 class ContentBody extends React.Component {
   constructor(props) {
     super(props);

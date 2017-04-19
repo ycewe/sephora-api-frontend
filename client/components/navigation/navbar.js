@@ -24,6 +24,7 @@ class Navbar extends React.Component {
     this.props.setPriceFilters(price);
   }
 
+  // handler to determine sort sequence selected. default is the raw sequence of the data.
   setSort(sort) {
     this.props.setSort(sort);
   }

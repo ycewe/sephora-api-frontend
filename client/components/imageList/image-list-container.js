@@ -1,9 +1,18 @@
+/*
+   eslint-disable
+    react/no-unused-prop-types
+*/
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import fetch from 'node-fetch';
 import ImageList from './image-list';
 import SortConstants from '../constants/sortConstants';
+import PriceConstants from '../constants/priceConstants';
 
+/**
+  * Wrapper to make HTTP calls to fetch data
+  */
 class ImageListContainer extends React.Component {
   static getCategoryFilterUrl(filters) {
     if (filters.length === 1) {
@@ -19,7 +28,7 @@ class ImageListContainer extends React.Component {
 
   static getPriceFilterUrl(filters) {
     if (filters) {
-      return `filter[price_lt]=${filters * 100}&`;
+      return `filter[price_lt]=${filters * PriceConstants.divisor}&`;
     }
 
     return '';

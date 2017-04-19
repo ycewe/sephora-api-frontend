@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PageConstants from '../constants/pageConstants';
 
+/**
+  * Handles page number and logic handling of page selection
+  */
 class PaginateOffset extends React.Component {
   /**
     * Extract the page number from the given url link

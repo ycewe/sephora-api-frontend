@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import CategoryConstants from '../../constants/categoryConstants';
 import FilterItem from './filter-item';
 
+/**
+  * Handles filtering of category of products
+  */
 class CategoryFilter extends React.Component {
   constructor(props) {
     super(props);

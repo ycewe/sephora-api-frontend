@@ -1,10 +1,12 @@
 const PriceConstants = {
-  under25: 1000,
-  under50: 2000,
-  under100: 5000,
-  under150: 10000,
-  under300: 25000,
+  under15: 1500,
+  under30: 3000,
+  under50: 5000,
+  under100: 10000,
+  under250: 25000,
   under1000: 100000,
+
+  divisor: 100,
 };
 
 export default PriceConstants;
