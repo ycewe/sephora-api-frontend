@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import PaginateSizeOption from './paginate-size-option';
-import PageConstants from '../constants/pageConstants';
+import PageConstants from '../../constants/pageConstants';
 
 const PaginateSize = ({ text, handlePageSize, value }) => (
   <div className="paginate-input">

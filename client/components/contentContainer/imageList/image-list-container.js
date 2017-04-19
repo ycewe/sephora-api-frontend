@@ -4,9 +4,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import fetch from 'node-fetch';
 import ImageList from './image-list';
-import SortConstants from '../constants/sortConstants';
-import PriceConstants from '../constants/priceConstants';
-import UrlConstants from '../constants/urlConstants';
+import SortConstants from '../../constants/sortConstants';
+import PriceConstants from '../../constants/priceConstants';
+import UrlConstants from '../../constants/urlConstants';
 
 /**
   * Wrapper to make HTTP calls to fetch data

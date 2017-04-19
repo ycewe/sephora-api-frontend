@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import ImageListContainer from '../imageList/image-list-container';
-import PaginateContainer from '../paginate/paginate-container';
+import ImageListContainer from './imageList/image-list-container';
+import PaginateContainer from './paginate/paginate-container';
 import PageConstants from '../constants/pageConstants';
 
 /**

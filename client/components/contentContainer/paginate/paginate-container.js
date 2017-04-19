@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PaginateOffset from './paginate-offset';
 import PaginateSize from './paginate-size';
-import PageConstants from '../constants/pageConstants';
+import PageConstants from '../../constants/pageConstants';
 
 /**
   * Hosts both pagination components (display size and page number)

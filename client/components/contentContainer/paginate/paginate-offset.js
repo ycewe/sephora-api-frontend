@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import PageConstants from '../constants/pageConstants';
+import PageConstants from '../../constants/pageConstants';
 
 /**
   * Handles page number and logic handling of page selection
@@ -43,6 +43,7 @@ class PaginateOffset extends React.Component {
       (<button
         value={PaginateOffset.getPageOffset(this.props.pageRange.first)}
         onClick={this.props.handlePageOffset}
+        id="page-first"
         className="offset-page-btn"
       >First</button>) :
       <button className="offset-page-disable" disabled>First</button>;
@@ -51,6 +52,7 @@ class PaginateOffset extends React.Component {
       (<button
         value={PaginateOffset.getPageOffset(this.props.pageRange.last)}
         onClick={this.props.handlePageOffset}
+        id="page-last"
         className="offset-page-btn"
       >Last</button>) :
       <button className="offset-page-disable" disabled>Last</button>;
@@ -59,6 +61,7 @@ class PaginateOffset extends React.Component {
       (<button
         value={PaginateOffset.getPageOffset(this.props.pageRange.next)}
         onClick={this.props.handlePageOffset}
+        id="page-next"
         className="offset-page-btn"
       >Next</button>) :
       <button className="offset-page-disable" disabled>Next</button>;
@@ -67,6 +70,7 @@ class PaginateOffset extends React.Component {
       (<button
         value={PaginateOffset.getPageOffset(this.props.pageRange.prev)}
         onClick={this.props.handlePageOffset}
+        id="page-prev"
         className="offset-page-btn"
       >Prev</button>) :
       <button className="offset-page-disable" disabled>Prev</button>;
