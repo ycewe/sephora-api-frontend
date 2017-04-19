@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ImageList = ({ images }) => (
-  <div id="image-loader-body">
+  <div id="image-list-body">
     {
       images.map(product =>
         <div key={product.id} id="product">

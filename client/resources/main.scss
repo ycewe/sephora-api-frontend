@@ -8,8 +8,8 @@
     margin: 20px;
 
     @import 'content-container';
-    @import 'navigation';
-    @import 'image-loader';
+    @import 'side-nav';
+    @import 'image-list';
     @import 'paginate';
   }
 }
