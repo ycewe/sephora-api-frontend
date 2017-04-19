@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PaginateOffset from './paginate-offset';
 import PaginateSize from './paginate-size';
+import PageConstants from '../constants/pageConstants';
 
 class PaginateContainer extends React.Component {
   constructor(props) {
@@ -18,7 +19,9 @@ class PaginateContainer extends React.Component {
 
   handlePageSize(e) {
     this.setState({ size: e.target.value });
-    this.props.setPaginations(this.state.offset, e.target.value);
+
+    // always reset page number to avoid overshooting and mis-rendering
+    this.props.setPaginations(PageConstants.defaultPage, e.target.value);
   }
 
   handlePageOffset(e) {
@@ -30,7 +33,7 @@ class PaginateContainer extends React.Component {
     return (
       <div id="paginate">
         <PaginateOffset handlePageOffset={this.handlePageOffset} pageRange={this.props.pageRange} />
-        <PaginateSize text="Products Per Page" handlePageSize={this.handlePageSize} />
+        <PaginateSize text="Products Per Page" handlePageSize={this.handlePageSize} value={this.state.size} />
       </div>
     );
   }
