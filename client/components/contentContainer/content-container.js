@@ -10,7 +10,7 @@ class ContentBody extends React.Component {
 
     this.state = {
       paginations: [],
-      pageLinks: [],
+      pageLinks: {},
     };
 
     this.setPaginations = ::this.setPaginations;

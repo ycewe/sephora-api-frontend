@@ -55,7 +55,6 @@ class ImageListContainer extends React.Component {
     this.fetchData('https://sephora-api-frontend-test.herokuapp.com/products');
   }
 
-
   componentWillReceiveProps(nextProps) {
     const filterUrl = (nextProps.priceFilters === '0') ?
       ImageListContainer.getCategoryFilterUrl(nextProps.categoryFilters) :

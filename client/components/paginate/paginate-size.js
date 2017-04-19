@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const PaginateSize = ({ text, handlePageSize }) => (
-  <div className="paginate">
+  <div className="paginate-input">
     <label htmlFor="pag-size">{text}</label>
     <input type="number" min="1" id="pag-size" onChange={handlePageSize} />
   </div>

@@ -29,7 +29,7 @@ class PaginateContainer extends React.Component {
   render() {
     return (
       <div id="paginate">
-        <PaginateOffset handlePageOffset={this.handlePageOffset} />
+        <PaginateOffset handlePageOffset={this.handlePageOffset} pageRange={this.props.pageRange} />
         <PaginateSize text="Products Per Page" handlePageSize={this.handlePageSize} />
       </div>
     );
@@ -38,6 +38,7 @@ class PaginateContainer extends React.Component {
 
 PaginateContainer.propTypes = {
   setPaginations: PropTypes.func.isRequired,
+  pageRange: PropTypes.objectOf(PropTypes.string).isRequired,
 };
 
 export default PaginateContainer;
