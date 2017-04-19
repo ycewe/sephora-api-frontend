@@ -10,10 +10,18 @@ class SortInput extends React.Component {
   constructor(props) {
     super(props);
 
+    // state is needed for unit testing purposes
+    this.state = {
+      sort: 'none', // default value
+    };
+
     this.handleSelect = ::this.handleSelect;
   }
 
   handleSelect(e) {
+    this.setState({
+      sort: e.target.value,
+    });
     this.props.setSort(e.target.value);
   }
 

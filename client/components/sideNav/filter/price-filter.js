@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import FilterItem from './filter-item';
@@ -10,8 +12,9 @@ class PriceFilter extends React.Component {
   constructor(props) {
     super(props);
 
+    // necessary for unit testing
     this.state = {
-      filters: [],
+      filters: '0', // default state
     };
 
     this.handleToggle = ::this.handleToggle;
@@ -19,12 +22,15 @@ class PriceFilter extends React.Component {
   }
 
   handleToggle(e) {
+    this.state = {
+      filters: e.target.value,
+    };
     this.props.setFilter(e.target.value);
   }
 
   handleSelect() {
     this.setState({
-      filters: [],
+      filters: '0',
     });
     this.props.handleFilterSelect();
   }
