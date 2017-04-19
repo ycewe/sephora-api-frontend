@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import _ from 'lodash';
 import PageConstants from '../constants/pageConstants';
 
 /**
@@ -8,7 +9,8 @@ import PageConstants from '../constants/pageConstants';
 class PaginateOffset extends React.Component {
   /**
     * Extract the page number from the given url link
-    * @param url  - page number
+    * @param string  - url
+    * @return string - currentPage
     */
   static getPageOffset(url) {
     const pageOffsetStartIndex = url.indexOf(PageConstants.offsetUrl);
@@ -29,13 +31,15 @@ class PaginateOffset extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({
-      currentPage: PaginateOffset.getPageOffset(nextProps.pageRange.self),
-    });
+    if (!_.isNil(nextProps.pageRange.self)) {
+      this.setState({
+        currentPage: PaginateOffset.getPageOffset(nextProps.pageRange.self),
+      });
+    }
   }
 
   render() {
-    const first = (this.props.pageRange.first) ?
+    const first = (!_.isNil(this.props.pageRange.first)) ?
       (<button
         value={PaginateOffset.getPageOffset(this.props.pageRange.first)}
         onClick={this.props.handlePageOffset}
@@ -43,7 +47,7 @@ class PaginateOffset extends React.Component {
       >First</button>) :
       <button className="offset-page-disable" disabled>First</button>;
 
-    const last = (this.props.pageRange.last) ?
+    const last = (!_.isNil(this.props.pageRange.last)) ?
       (<button
         value={PaginateOffset.getPageOffset(this.props.pageRange.last)}
         onClick={this.props.handlePageOffset}
@@ -51,7 +55,7 @@ class PaginateOffset extends React.Component {
       >Last</button>) :
       <button className="offset-page-disable" disabled>Last</button>;
 
-    const next = (this.props.pageRange.next) ?
+    const next = (!_.isNil(this.props.pageRange.next)) ?
       (<button
         value={PaginateOffset.getPageOffset(this.props.pageRange.next)}
         onClick={this.props.handlePageOffset}
@@ -59,7 +63,7 @@ class PaginateOffset extends React.Component {
       >Next</button>) :
       <button className="offset-page-disable" disabled>Next</button>;
 
-    const prev = (this.props.pageRange.prev) ?
+    const prev = (!_.isNil(this.props.pageRange.prev)) ?
       (<button
         value={PaginateOffset.getPageOffset(this.props.pageRange.prev)}
         onClick={this.props.handlePageOffset}
