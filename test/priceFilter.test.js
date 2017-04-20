@@ -3,8 +3,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import sinon from 'sinon';
-import App from '../client/components/app';
-import SideNav from '../client/components/sideNav/side-nav';
 import Filter from '../client/components/sideNav/filter/price-filter';
 import FilterItem from '../client/components/sideNav/filter/filter-item';
 

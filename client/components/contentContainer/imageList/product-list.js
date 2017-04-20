@@ -2,13 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ProductItem from './product-item';
 
+/**
+  * Handles logic regarding product events
+  */
 class ProductList extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       existingProducts: [],
-      isViewAll: true,
+      isViewAll: true,  // whether all products is displayed
     };
 
     this.displayProduct = ::this.displayProduct;
@@ -21,13 +24,17 @@ class ProductList extends React.Component {
     });
   }
 
+  /**
+    * Toggles the display of a single product
+    * @param object - e
+    */
   displayProduct(e) {
     if (this.state.isViewAll) {
       this.setState({
         existingProducts: this.props.products.filter(
           product => product.id === e.target.value,
         )[0],
-        isViewAll: false,
+        isViewAll: false,   // view a particular product only
       });
     } else {
       this.setState({

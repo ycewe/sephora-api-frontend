@@ -3,10 +3,10 @@
 A test frontend only web application for Sephora API
 
 ## Tech Stack
-Client: **React.js**
-Server: **Express**
-Test: **Jest, Enzyme, Sinon**
-Build: **Gulp, ESLint, Babel, Webpack**
+* Client: **HTML5, CSS3, React.js**
+* Server: **Express.js**
+* Test: **Jest, Enzyme, Sinon**
+* Build & Preprocessing: **Gulp, ESLint, Babel, Webpack, SASS**
 
 Standards: [Airbnb Javascript](https://github.com/airbnb/javascript)
 
