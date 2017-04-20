@@ -1,0 +1,55 @@
+/** product list component css **/
+#product-list-body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  #product {
+    width: 230px;
+    max-height: 230px;
+    font-size: 14px;
+    padding: 10px;
+    text-align: center;
+
+    #toggle-display-btn {
+      position: absolute;
+      background: white;
+      border: 1px solid black;
+      min-width: 40px;
+      height: 25px;
+      text-transform: uppercase;
+    }
+
+    #toggle-display-btn:hover {
+      background: black;
+      color: white;
+    }
+
+    #product-name {
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    #product-category {
+      text-transform: capitalize;
+    }
+
+    #product-price {
+      font-weight: 600;
+    }
+
+    #product-more-info {
+      margin-top: 10px;
+
+      #product-salePrice {
+        color: #ff0000; // red
+        font-weight: 600;
+      }
+
+      #product-soldOut {
+        color: #ff0000; // red
+        font-weight: 600;
+      }
+    }
+  }
+}

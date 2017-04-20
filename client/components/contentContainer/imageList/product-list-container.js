@@ -3,7 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import fetch from 'node-fetch';
-import ImageList from './image-list';
+import ProductList from './product-list';
 import SortConstants from '../../constants/sortConstants';
 import PriceConstants from '../../constants/priceConstants';
 import UrlConstants from '../../constants/urlConstants';
@@ -11,7 +11,7 @@ import UrlConstants from '../../constants/urlConstants';
 /**
   * Wrapper to make HTTP calls to fetch data
   */
-class ImageListContainer extends React.Component {
+class ProductListContainer extends React.Component {
   static getCategoryFilterUrl(filters) {
     if (filters.length === 1) {
       // filter where category is equal to filter
@@ -53,7 +53,7 @@ class ImageListContainer extends React.Component {
     super(props);
 
     this.state = {
-      images: [],
+      products: [],
       links: [],
     };
   }
@@ -64,10 +64,10 @@ class ImageListContainer extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     const filterUrl = (nextProps.priceFilters === '0') ?
-      ImageListContainer.getCategoryFilterUrl(nextProps.categoryFilters) :
-      ImageListContainer.getPriceFilterUrl(nextProps.priceFilters);
-    const sortUrl = ImageListContainer.getSortUrl(nextProps.sort);
-    const paginateUrl = ImageListContainer.getPaginateUrl(nextProps.paginations);
+      ProductListContainer.getCategoryFilterUrl(nextProps.categoryFilters) :
+      ProductListContainer.getPriceFilterUrl(nextProps.priceFilters);
+    const sortUrl = ProductListContainer.getSortUrl(nextProps.sort);
+    const paginateUrl = ProductListContainer.getPaginateUrl(nextProps.paginations);
 
     this.fetchData(`${UrlConstants.main}?${filterUrl}${sortUrl}${paginateUrl}`);
   }
@@ -81,7 +81,8 @@ class ImageListContainer extends React.Component {
       .then(res => res.json())
       .then((json) => {
         this.setState({
-          images: json.data,
+          products: json.data,
+          links: json.links,  // used for testing
         });
         this.props.setPageRange(json.links);
       });
@@ -89,12 +90,12 @@ class ImageListContainer extends React.Component {
 
   render() {
     return (
-      <ImageList images={this.state.images} />
+      <ProductList products={this.state.products} />
     );
   }
 }
 
-ImageListContainer.propTypes = {
+ProductListContainer.propTypes = {
   categoryFilters: PropTypes.arrayOf(PropTypes.string).isRequired,
   priceFilters: PropTypes.string.isRequired,
   sort: PropTypes.string.isRequired,
@@ -102,4 +103,4 @@ ImageListContainer.propTypes = {
   setPageRange: PropTypes.func.isRequired,
 };
 
-export default ImageListContainer;
+export default ProductListContainer;

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import ImageListContainer from './imageList/image-list-container';
+import ProductListContainer from './imageList/product-list-container';
 import PaginateContainer from './paginate/paginate-container';
 import PageConstants from '../constants/pageConstants';
 
@@ -65,7 +65,7 @@ class ContentBody extends React.Component {
           setPaginations={this.setPaginations}
           pageRange={this.state.pageLinks}
         />
-        <ImageListContainer
+        <ProductListContainer
           categoryFilters={this.props.categoryFilters}
           priceFilters={this.props.priceFilters}
           sort={this.props.sort}
