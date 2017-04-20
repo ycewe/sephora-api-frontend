@@ -8,6 +8,6 @@ var connections = (process.env.NODE_ENV === 'production')
 var url = connections.hostname + ':' + connections.port;
 
 app.use(express.static(path.join(__dirname, './dist')));
-app.listen(connections.port);
+app.listen(process.env.PORT || connections.port);
 
 console.log('Serving on ' + url + ' in ' + connections.env);
