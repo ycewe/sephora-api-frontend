@@ -1,4 +1,4 @@
-# sephora-api
+# sephora-api-frontend
 
 A test frontend only web application for Sephora API
 
