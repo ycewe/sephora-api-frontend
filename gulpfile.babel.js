@@ -1,18 +1,17 @@
 const gulp = require('gulp');
-const babel = require('gulp-babel');
 const csso = require('gulp-csso');
 const sass = require('gulp-sass');
-const mocha = require('gulp-mocha-co');
 const eslint = require('gulp-eslint');
 const nodemon = require('nodemon');
 const webpack = require('webpack-stream');
 
-const webpackConfig = require('./webpack.dev.config.js');
+const webpackConfig = (process.env.NODE_ENV === 'production') ?
+  require('./webpack.prod.config.js') : require('./webpack.dev.config.js');
 
 const rootDir = './dist';
 
 // required dependencies for es6 in gulp
-require('babel-register');
+require('babel-register');-
 require('babel-polyfill');
 
 // lint task
@@ -22,17 +21,6 @@ gulp.task('lint', () =>
     .pipe(eslint.formatEach())
     .pipe(eslint.failAfterError()),
 );
-
-// run test
-gulp.task('test', () => {
-  gulp.src('tests/*.test.js')
-    .pipe(babel({
-      presets: ['es2015'],
-    }))
-    .pipe(mocha({
-      reporter: 'Spec',
-    }));
-});
 
 // minimizing files and bundling
 gulp.task('css', () =>
