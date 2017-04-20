@@ -11,7 +11,7 @@ const webpackConfig = (process.env.NODE_ENV === 'production') ?
 const rootDir = './dist';
 
 // required dependencies for es6 in gulp
-require('babel-register');-
+require('babel-register');
 require('babel-polyfill');
 
 // lint task
@@ -52,7 +52,10 @@ gulp.task('watch', () => {
   gulp.watch('./client/**/*.js', ['bundle']);
 });
 
-// run gulp task for development
+// build for deployment
+gulp.task('build', ['css', 'html', 'bundle']);
+
+// build for development
 gulp.task('default', ['watch', 'css', 'html', 'bundle'], () => {
   nodemon({
     script: 'server.js',
